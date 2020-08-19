@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <AddTodo v-on:add-todo="addTodo"/>
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
+    <AddTodo v-on:add-todo="addTodo" class="addTodo"/>
+    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" class="todos" />
   </div>
 </template>
 
@@ -56,6 +56,25 @@ export default {
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
+    height: 100vh;
+    background-image: url("../assets/background.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+  }
+
+  .todos {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #655;
+    border-radius: 20px;
+  }
+
+  .addTodo {
+    width: 50%;
+    margin: 0 auto;
+    padding: 100px 10px 10px 10px;
   }
 
   .btn {
@@ -68,7 +87,17 @@ export default {
   }
 
   .btn:hover {
-    background: #666;
+    background: #656565;
+  }
+
+  @media screen and (max-width: 800px) {
+    .todos {
+      width: 80%;
+    }
+
+    .addTodo {
+      width: 80%;
+    }
   }
 </style>
 
